@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "i18next": "^25.6.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-i18next": "^16.1.4",
+    "sass": "^1.93.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
@@ -23,5 +26,17 @@
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
     "vite": "^7.1.7"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s7imKa/my-portfolio.git"
+  },
+  "author": "Makym Kravchyshyn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s7imKa/my-portfolio/issues"
+  },
+  "homepage": "https://github.com/s7imKa/my-portfolio#readme"
 }
