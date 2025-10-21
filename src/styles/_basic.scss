@@ -12,12 +12,13 @@ html {
     scroll-behavior: smooth;
 }
 
+
 body {
     min-height: 100vh;
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'FiraCode', sans-serif;
     line-height: 1.5;
-    color: #222;
-    background-color: #fff;
+    color: var(--color-text);
+    background-color: var(--color-bg);
 }
 
 img,

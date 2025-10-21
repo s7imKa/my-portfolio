@@ -4,7 +4,18 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+        <!-- встановлюємо тему до завантаження JS та CSS, щоб уникнути FOUC -->
+    <script>
+      (function () {
+        try {
+          const theme = localStorage.getItem('theme') || 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          /* ignore */
+        }
+      })();
+    </script>
+
     <title>portfolio</title>
   </head>
   <body>

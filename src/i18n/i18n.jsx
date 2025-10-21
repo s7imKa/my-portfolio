@@ -13,8 +13,10 @@ function interpolate(str, vars = {}) {
     return String(str).replace(/\{\{\s*(\w+)\s*\}\}/g, (_, k) => vars[k] ?? `{{${k}}}`)
 }
 
+
+
 export function I18nProvider({ children }) {
-    const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'uk')
+    const [lang, setLang] = useState(() => localStorage.getItem('lang') || 'en')
 
     useEffect(() => {
         localStorage.setItem('lang', lang)

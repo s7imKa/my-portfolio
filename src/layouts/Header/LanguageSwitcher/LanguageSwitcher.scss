@@ -1,0 +1,67 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixin' as *;
+
+.language-btn {
+    position: relative;
+    color: var(--color-text-header);
+    font-size: $font-size-bace;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    &::after {
+        content: '';
+        display: block;
+        height: 0.7rem;
+        width: 0.7rem;
+        transition: all 0.3s ease;
+        transform: rotate(-135deg) translate(50%,10%);
+        border-top: 0.2rem solid var(--color-text-header); /* верхня межа */
+        border-left: 0.2rem solid var(--color-text-header); /* права межа */
+    }
+
+    &[aria-expanded='true']::after {
+        transform: rotate(45deg) translate(-50%, 10%);
+
+    }
+
+}
+
+.lang-switcher {
+    @include display-flex;
+    flex-direction: column;
+    position: absolute;
+    top: 13%;
+    border: 0.1rem solid var(--color-text-header);
+    padding: 0.3rem 0.6rem;
+    gap: 0.5rem;
+    animation: lang-switcher 0.3s ease forwards;
+}
+
+.lang-switcher button {
+    color: var(--color-text-header);
+    font-size: $font-size-bace;
+    cursor: pointer;
+}
+
+.active {
+    display: flex;
+}
+
+.noVisible {
+    display: none;
+}
+
+@keyframes lang-switcher {
+    from {
+        top: -5%;
+    }
+    50%{
+        top: 7rem;
+    }
+    to {
+        top: 5.2rem;
+    }
+}

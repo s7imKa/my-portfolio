@@ -2,10 +2,12 @@
 
 :root {
   --color-bg: #{$color-bg-light};
-  --color-text: #{$color-text-light};
+  --color-text: #{$color-text-dark};
+  --color-text-header: #767676;
 }
 
 [data-theme='dark'] {
   --color-bg: #{$color-bg-dark};
-  --color-text: #{$color-text-dark};
+  --color-text: #{$color-text-light};
+  --color-text-header: #ABB2BF;
 }

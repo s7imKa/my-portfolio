@@ -1,0 +1,49 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/variables' as *;
+
+.header {
+    background-color: var(--color-bg);
+    .wrapper {
+        min-height: 7rem;
+        @include display-flex;
+        justify-content: space-between;
+    }
+    &-logo {
+        @include display-flex;
+        gap: 1rem;
+        &__img {
+            width: 3rem;
+            height: 3rem;
+        }
+        &__title {
+            font-size: $font-size-bace;
+        }
+    }
+
+    &-content {
+        @include display-flex;
+        gap: 3rem;
+
+        &__navigation {
+        }
+        &__ul {
+            @include display-flex;
+            gap: 3rem;
+        }
+        &__list {
+            list-style-type: none;
+        }
+        &__link {
+            font-size: $font-size-bace;
+            color: var(--color-text-header);
+            & span {
+                color: $color-primary;
+            }
+        }
+
+        &__setup {
+            @include display-flex;
+            gap: 2rem;
+        }
+    }
+}

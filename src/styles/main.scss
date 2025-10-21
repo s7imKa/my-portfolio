@@ -3,10 +3,6 @@
 @forward './_mixin.scss';
 @forward './_basic.scss';
 @forward './_global.scss';
-
 @use '../styles/theme';
 
-body{
-    background-color: var(--color-bg);
 
-}

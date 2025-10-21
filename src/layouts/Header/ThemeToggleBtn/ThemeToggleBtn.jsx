@@ -30,8 +30,10 @@ export default function ThemeToggleBtn() {
     }
 
     return (
-        <button className='theme-toggle' aria-label='Змінити тему' onClick={() => onToggle()}>
-            {theme === 'light' ? '🌙' : '☀️'}
-        </button>
+        <button
+            className='theme-toggle'
+            aria-label='Змінити тему'
+            onClick={() => onToggle()}
+        ></button>
     )
 }
