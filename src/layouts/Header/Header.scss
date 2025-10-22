@@ -2,8 +2,11 @@
 @use '../../styles/variables' as *;
 
 .header {
+    position: relative;
     background-color: var(--color-bg);
     .wrapper {
+        position: relative;
+
         min-height: 7rem;
         @include display-flex;
         justify-content: space-between;
@@ -34,8 +37,20 @@
             list-style-type: none;
         }
         &__link {
+            display: inline-block;
             font-size: $font-size-bace;
             color: var(--color-text-header);
+            transition: transform 0.5s ease;
+
+            @include hover {
+                transform: scale(1.05) translateY(-0.1rem);
+                color: var(--color-text-header-hover);
+            }
+            @include hover {
+                & span {
+                    font-weight: 500;
+                }
+            }
             & span {
                 color: $color-primary;
             }
@@ -43,7 +58,112 @@
 
         &__setup {
             @include display-flex;
-            gap: 2rem;
+            gap: 3rem;
+        }
+
+        @media (max-width: $bp-md) {
+            display: none;
+            top: 100%;
+            left: 0;
+            flex-direction: column;
+
+            &__ul {
+                flex-direction: column;
+                align-items: start;
+            }
+
+            &__setup {
+                margin-top: 3rem;
+                flex-direction: column;
+                align-items: start;
+            }
         }
     }
+
+    &__burger-btn {
+        display: none;
+        position: relative;
+        height: 2.4rem;
+        width: 2.4rem;
+
+        & span {
+            transition: top 300ms cubic-bezier(0.2, 0.9, 0.3, 1),
+                transform 800ms cubic-bezier(0.2, 0.9, 0.3, 1), width 300ms;
+            transform-origin: center;
+        }
+        &[aria-expanded='false'] {
+            & span:nth-child(1) {
+                position: absolute;
+                top: 20%;
+                right: 0;
+                height: 0.2rem;
+                width: 100%;
+                background-color: var(--color-text-header);
+                border-radius: 1rem;
+            }
+            & span:nth-child(2) {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                height: 0.2rem;
+                width: 65%;
+                background-color: var(--color-text-header);
+                border-radius: 1rem;
+            }
+        }
+
+        &[aria-expanded='true'] {
+            & span:nth-child(1) {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                height: 0.2rem;
+                width: 100%;
+                transform: rotate(45deg);
+                background-color: var(--color-text-header);
+                border-radius: 1rem;
+            }
+            & span:nth-child(2) {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                height: 0.2rem;
+                width: 100%;
+                transform: rotate(-405deg);
+                background-color: var(--color-text-header);
+                border-radius: 1rem;
+            }
+        }
+
+        @media (max-width: $bp-md) {
+            display: block;
+        }
+    }
+    &-burger {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 2rem;
+        width: 100%;
+        max-width: 20rem;
+        margin: 0 auto;
+        border-radius: 1rem;
+        background: var(--color-bg);
+        padding: 1.5rem 2rem;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        z-index: 30;
+        flex-direction: column;
+        transition: all 0.4s ease;
+        transform: translateX(-120%);
+
+        @media (max-width: $bp-md) {
+            display: flex;
+            opacity: 0;
+        }
+    }
+}
+
+.header-burger.active-burger {
+    transform: translateX(0); /* плавне висування */
+    opacity: 1;
 }

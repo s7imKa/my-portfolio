@@ -3,10 +3,14 @@ import { useI18n } from '../../i18n/context'
 import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher'
 import ThemeToggleBtn from './ThemeToggleBtn/ThemeToggleBtn'
 
+import { useState } from 'react'
 import './Header.scss'
 
 export default function Header() {
     const { t } = useI18n()
+    const [openBurger, setBurger] = useState(false)
+
+    const classOpenBurger = openBurger === true ? 'header-burger active-burger' : 'header-burger'
     return (
         <header className='header'>
             <div className='wrapper container'>
@@ -20,6 +24,49 @@ export default function Header() {
                 </div>
 
                 <div className='header-content'>
+                    <nav className='header-content__navigation'>
+                        <ul className='header-content__ul'>
+                            <li className='header-content__list'>
+                                <a href='#' className='header-content__link'>
+                                    <span>#</span>
+                                    {t('header.home')}
+                                </a>
+                            </li>
+                            <li className='header-content__list'>
+                                <a href='#' className='header-content__link'>
+                                    <span>#</span>
+                                    {t('header.works')}
+                                </a>
+                            </li>
+                            <li className='header-content__list'>
+                                <a href='#' className='header-content__link'>
+                                    <span>#</span>
+                                    {t('header.about')}
+                                </a>
+                            </li>
+                            <li className='header-content__list'>
+                                <a href='#' className='header-content__link'>
+                                    <span>#</span>
+                                    {t('header.contacts')}
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div className='header-content__setup'>
+                        <LanguageSwitcher />
+                        <ThemeToggleBtn />
+                    </div>
+                </div>
+
+                <button
+                    className='header__burger-btn'
+                    onClick={() => setBurger(prev => !prev)}
+                    aria-expanded={openBurger}
+                >
+                    <span></span>
+                    <span></span>
+                </button>
+                <div className={classOpenBurger}>
                     <nav className='header-content__navigation'>
                         <ul className='header-content__ul'>
                             <li className='header-content__list'>
