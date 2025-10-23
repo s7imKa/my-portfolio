@@ -4,10 +4,16 @@
     justify-content: center;
 }
 
-@mixin anim-hover {
+@mixin anim-hover-link {
     transform: rotate(3deg) translateY(-0.1rem);
     filter: drop-shadow(0 0 3px #c365dd);
     transition: all 0.3s ease-in-out;
+}
+
+@mixin anim-hover-btn {
+    color: var(--color-text-header-hover);
+    background-color: #c778dd38;
+    border: 0.1rem solid #c778dd;
 }
 
 @mixin hover {

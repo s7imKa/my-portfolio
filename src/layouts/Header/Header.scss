@@ -98,7 +98,7 @@
             transition: all 0.2s ease;
 
             @include hover {
-                @include anim-hover;
+                @include anim-hover-link;
                 color: var(--color-text-header-hover);
                   & span {
                     font-weight: 600;

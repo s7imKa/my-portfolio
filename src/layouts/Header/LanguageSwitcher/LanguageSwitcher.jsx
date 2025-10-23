@@ -41,9 +41,9 @@ export default function LanguageSwitcher() {
     }
 
     return (
-        <div ref={containerRef}>
+        <div ref={containerRef} className='lang-switcher-block'>
             <button onClick={onSwitcher} className='language-btn' aria-expanded={isActive}>
-                {lang == 'uk' ? 'УКР' : 'ENG'} 
+                {lang == 'uk' ? 'УКР' : 'ENG'}
             </button>
 
             <div className={classActive} role='group' aria-label={t('common.changeLang')}>
