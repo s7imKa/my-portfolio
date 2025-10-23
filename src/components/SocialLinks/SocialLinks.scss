@@ -1,0 +1,96 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/variables' as *;
+
+.social-sidebar {
+    &__ul {
+        @include display-flex;
+        gap: 0.5rem;
+        transition: transform 0.22s ease, color 0.22s ease;
+        will-change: transform;
+
+        &--link-column {
+            flex-direction: column;
+        }
+
+        @media (max-width: $bp-md) {
+            .a2,
+            .a3,
+            .a4 {
+                animation: none !important;
+            }
+        }
+    }
+
+    &__li {
+        position: relative;
+        width: 3.2rem;
+        height: 3.2rem;
+        transition: transform 0.3s ease;
+
+        @include hover {
+            @include anim-hover;
+        }
+
+
+        .a2 {
+            animation: anim-link2 3.5s ease-in-out infinite alternate;
+            [data-theme='light'] & {
+                content: url('../../assets/icons/social-link/light-theme/Telegram2.svg');
+                margin: 0 auto;
+            }
+        }
+        .a3 {
+            animation: anim-link3 3.5s ease-in-out infinite alternate;
+            [data-theme='light'] & {
+                content: url('../../assets/icons/social-link/light-theme/Email2.svg');
+                margin: 0 auto;
+            }
+        }
+        .a4 {
+            animation: anim-link4 3.5s ease-in-out infinite alternate;
+            [data-theme='light'] & {
+                content: url('../../assets/icons/social-link/light-theme/Figma2.svg');
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &__a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        & img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+@keyframes anim-link2 {
+    from {
+        transform: translateX(0.3rem);
+    }
+    to {
+        transform: translateX(-0.3rem);
+    }
+}
+@keyframes anim-link3 {
+    from {
+        transform: translateX(0.7rem);
+    }
+    to {
+        transform: translateX(-0.7rem);
+    }
+}
+@keyframes anim-link4 {
+    from {
+        transform: translateX(1.4rem);
+    }
+    to {
+        transform: translateX(-1.4rem);
+    }
+}

@@ -1,17 +1,37 @@
-@mixin display-flex{
+@mixin display-flex {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+@mixin anim-hover {
+    transform: rotate(3deg) translateY(-0.1rem);
+    filter: drop-shadow(0 0 3px #c365dd);
+    transition: all 0.3s ease-in-out;
+}
 
 @mixin hover {
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      @content;
+    // для мишки
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            @content;
+        }
+
+        // стандартний :active для мишки
+        &:active {
+            @content;
+        }
     }
-  }
-  &:focus-visible {
-    @content;
-  }
+
+    // для клавіатури
+    &:focus-visible {
+        @content;
+    }
+
+    // для сенсорних пристроїв (натискання пальцем)
+    @media (hover: none) and (pointer: coarse) {
+        &:active {
+            @content;
+        }
+    }
 }

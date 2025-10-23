@@ -6,17 +6,72 @@
     background-color: var(--color-bg);
     .wrapper {
         position: relative;
-
         min-height: 7rem;
         @include display-flex;
         justify-content: space-between;
     }
+
+    &-social {
+        position: absolute;
+        top: -10rem;
+        left: -7rem;
+        /* при hover / focus зупиняємо тільки ці три анімації */
+        @include hover {
+            .a2,
+            .a3,
+            .a4 {
+                animation-play-state: paused !important;
+            }
+        }
+
+        @include display-flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        will-change: transform;
+        transform-origin: left center;
+        animation: social-sway 3.5s ease-in-out infinite alternate;
+
+        @include hover {
+            animation-play-state: paused;
+        }
+
+        &__line {
+            display: block;
+            margin: 0 auto;
+            height: 30rem;
+            width: 0.1rem;
+            background-color: var(--color-text-header);
+        }
+
+        /* keyframes для хитання */
+        @keyframes social-sway {
+            from {
+                transform: translateX(1rem) rotate(-2deg);
+            }
+
+            to {
+                transform: translateX(-1rem) rotate(2deg);
+            }
+        }
+
+        @media (max-width: 1250px) {
+            left: 1rem;
+        }
+
+        @media (max-width: $bp-md) {
+            display: none;
+        }
+    }
+
     &-logo {
         @include display-flex;
-        gap: 1rem;
+        gap: 0.5rem;
+        z-index: 99;
+
         &__img {
-            width: 3rem;
-            height: 3rem;
+            width: 1.6rem;
+            height: 1.6rem;
         }
         &__title {
             font-size: $font-size-bace;
@@ -40,15 +95,13 @@
             display: inline-block;
             font-size: $font-size-bace;
             color: var(--color-text-header);
-            transition: transform 0.5s ease;
+            transition: all 0.2s ease;
 
             @include hover {
-                transform: scale(1.05) translateY(-0.1rem);
+                @include anim-hover;
                 color: var(--color-text-header-hover);
-            }
-            @include hover {
-                & span {
-                    font-weight: 500;
+                  & span {
+                    font-weight: 600;
                 }
             }
             & span {
@@ -155,6 +208,10 @@
         flex-direction: column;
         transition: all 0.4s ease;
         transform: translateX(-120%);
+
+        &__social-burg {
+            margin-top: 3rem;
+        }
 
         @media (max-width: $bp-md) {
             display: flex;

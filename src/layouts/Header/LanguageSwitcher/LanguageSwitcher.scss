@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 
     &::after {
         content: '';
@@ -26,13 +26,10 @@
 
     &[aria-expanded='true']::after {
         transform: rotate(45deg) translate(-50%, 10%);
-        
     }
 
     @include hover {
         color: var(--color-text-header-hover);
-        transform: scale(1.05) translateY(-0.1rem);
-
     }
 }
 
@@ -56,7 +53,7 @@
     cursor: pointer;
     @include hover {
         color: var(--color-text-header-hover);
-        transform: scale(1.05) translateY(-0.1rem);
+        @include anim-hover;
     }
 }
 

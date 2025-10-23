@@ -1,7 +1,10 @@
 import { useI18n } from '../../i18n/context'
 
+import SocialLinks from '../../components/SocialLinks/SocialLinks'
 import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher'
 import ThemeToggleBtn from './ThemeToggleBtn/ThemeToggleBtn'
+
+import Logo  from '../../assets/icons/logo2.svg'
 
 import { useState } from 'react'
 import './Header.scss'
@@ -14,10 +17,15 @@ export default function Header() {
     return (
         <header className='header'>
             <div className='wrapper container'>
+                <div className='header-social'>
+                    <span className='header-social__line'></span>
+                    <SocialLinks column={true} />
+                </div>
+
                 <div className='header-logo'>
                     <img
                         className='header-logo__img'
-                        src='/src/assets/icons/logo2.svg'
+                        src={Logo}
                         alt='logo'
                     />
                     <p className='header-logo__title'>Maks</p>
@@ -98,6 +106,9 @@ export default function Header() {
                     <div className='header-content__setup'>
                         <LanguageSwitcher />
                         <ThemeToggleBtn />
+                    </div>
+                    <div className='header-burger__social-burg'>
+                        <SocialLinks />
                     </div>
                 </div>
             </div>

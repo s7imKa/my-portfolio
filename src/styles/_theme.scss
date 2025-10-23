@@ -1,14 +1,18 @@
 @use './variables' as *;
 
 :root {
-  --color-bg: #{$color-bg-light};
-  --color-text: #{$color-text-dark};
-  --color-text-header: #767676;
+    --color-bg: #{$color-bg-light};
+    --color-text: #{$color-text-dark};
+    --color-text-header: #5f5f5f;
+    --icon-color: #c365dd;
+
 }
 
 [data-theme='dark'] {
-  --color-bg: #{$color-bg-dark};
-  --color-text: #{$color-text-light};
-  --color-text-header: #ABB2BF;
-  --color-text-header-hover: #{$color-bg-light};
+    --color-bg: #{$color-bg-dark};
+    --color-text: #{$color-text-light};
+    --color-text-header: #abb2bf;
+    --color-text-header-hover: #{$color-bg-light};
+    --icon-color: none;
+
 }
