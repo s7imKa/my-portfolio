@@ -1,125 +1,175 @@
 :root {
-  --w: 56px;
-  --h: 25px;
-  --knob: 26px;
-  --gap: 1px;
-  --dur: 220ms;
+    --w: 55px;
+    --h: 28px;
+    --knob: 24px;
+    --gap: 2px;
+    --dur: 300ms;
 
-  /* нові кольори */
-  --bg-dark: linear-gradient(180deg, #23262c, #282C33);
-  --bg-light: linear-gradient(180deg, #faf6ff, #f3eaff);
+    /* лофт кольори */
+    --bg-dark: #2a2d35;
+    --bg-light: #e8e4f0;
 
-  --accent-sun: #c365dd;  /* твій фіолетовий */
-  --accent-moon: #b4a1c5; /* трохи приглушений варіант для "місяця" */
+    --accent-purple: #b87fd9;
+    --accent-purple-bright: #d89ff5;
+    --border-dark: rgba(184, 127, 217, 0.15);
+    --border-light: rgba(184, 127, 217, 0.25);
 }
 
 .theme-toggle {
-  width: var(--w);
-  height: var(--h);
-  padding: 0;
-  border: 0;
-  border-radius: 999px;
-  position: relative;
-  cursor: pointer;
-  background: var(--bg-dark);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
-  -webkit-tap-highlight-color: transparent;
-  transition: background var(--dur) ease, box-shadow var(--dur) ease;
-  display: inline-block;
-  outline: none;
+    width: var(--w);
+    height: var(--h);
+    margin: 0.7rem 1rem;
+    border: 1px solid var(--border-dark);
+    border-radius: 999px;
+    position: relative;
+    cursor: pointer;
+    background: var(--bg-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+    -webkit-tap-highlight-color: transparent;
+    transition: all var(--dur) cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    outline: none;
+    backdrop-filter: blur(10px);
+}
+
+/* hover */
+.theme-toggle:hover {
+    border-color: rgba(184, 127, 217, 0.3);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(184, 127, 217, 0.1);
 }
 
 /* focus */
 .theme-toggle:focus-visible {
-  box-shadow: 0 3px 12px rgba(0,0,0,0.28), 0 0 0 4px rgba(195,101,221,0.25);
+    border-color: var(--accent-purple);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2),
+        0 0 0 2px rgba(184, 127, 217, 0.3);
 }
 
 /* knob */
 .theme-toggle::before {
-  content: "";
-  position: absolute;
-  width: var(--knob);
-  height: var(--knob);
-  top: 50%;
-  left: var(--gap);
-  transform: translateY(-50%);
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.18);
-  transition: transform var(--dur) cubic-bezier(.2,.9,.3,1), background var(--dur);
-  z-index: 2;
+    content: '';
+    position: absolute;
+    width: var(--knob);
+    height: var(--knob);
+    top: 50%;
+    left: var(--gap);
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #3a3d47 0%, #2d3039 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.03);
+    transition: transform var(--dur) cubic-bezier(0.34, 1.56, 0.64, 1), background var(--dur) ease,
+        border-color var(--dur) ease;
+    z-index: 2;
 }
 
-/* icon (sun / moon) — decorative inner circle */
+/* іконка місяця/сонця */
 .theme-toggle::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: calc(var(--gap) + 6px);
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: transparent;
-  transition: all var(--dur) ease;
-  z-index: 1;
-  opacity: 0.95;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.18));
+    content: '🌙';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    line-height: 1;
+    transition: all var(--dur) ease;
+    z-index: 1;
+    opacity: 0.7;
+    filter: grayscale(0.3);
 }
 
-/* light theme */
-[data-theme="light"] .theme-toggle {
-  background: var(--bg-light);
-  box-shadow: 0 6px 18px rgba(195, 101, 221, 0.25);
+/* світла тема */
+[data-theme='light'] .theme-toggle {
+    background: var(--bg-light);
+    border-color: var(--border-light);
+    box-shadow: inset 0 1px 3px rgba(184, 127, 217, 0.08), 0 2px 8px rgba(184, 127, 217, 0.15);
 }
 
-[data-theme="light"] .theme-toggle::before {
-  transform: translate(calc(var(--w) - var(--knob) - var(--gap)), -50%);
-  background: #fffafc;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+[data-theme='light'] .theme-toggle:hover {
+    border-color: rgba(184, 127, 217, 0.4);
+    box-shadow: inset 0 1px 3px rgba(184, 127, 217, 0.08), 0 2px 10px rgba(184, 127, 217, 0.2),
+        0 0 0 1px rgba(184, 127, 217, 0.15);
 }
 
-[data-theme="light"] .theme-toggle::after {
-  right: calc(var(--w) / 2 + 6px);
-  background: radial-gradient(circle at 35% 30%, #f9e9ff 0%, var(--accent-sun) 60%);
-  box-shadow: 0 6px 18px rgba(195, 101, 221, 0.2);
-  transform: translateY(-50%) scale(1);
+[data-theme='light'] .theme-toggle::before {
+    transform: translate(calc(var(--w) - var(--knob) - var(--gap)), -50%);
+    background: linear-gradient(135deg, #f5f2fa 0%, #ebe5f5 100%);
+    border-color: rgba(184, 127, 217, 0.2);
+    box-shadow: 0 2px 8px rgba(184, 127, 217, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
-/* dark theme */
-[data-theme="dark"] .theme-toggle {
-  background: var(--bg-dark);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+/* сонце */
+[data-theme='light'] .theme-toggle::after {
+    content: '☀️';
+    left: 8px;
+    right: auto;
+    font-size: 14px;
+    opacity: 1;
+    filter: grayscale(0) brightness(1.1);
+    transform: translateY(-50%);
+    text-shadow: 0 0 8px rgba(216, 159, 245, 0.4);
 }
 
-[data-theme="dark"] .theme-toggle::before {
-  transform: translateY(-50%);
-  background: linear-gradient(180deg, #eae2f3, #d9c8eb);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.22);
+/* темна тема */
+[data-theme='dark'] .theme-toggle {
+    background: var(--bg-dark);
+    border-color: var(--border-dark);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-[data-theme="dark"] .theme-toggle::after {
-  right: calc(var(--gap) + 6px);
-  width: 10px;
-  height: 10px;
-  background: radial-gradient(circle at 40% 40%, #fff,#d8c9ec 40%, transparent 55%);
-  box-shadow:
-    18px -6px 0 -6px #d5c0ef,
-    26px 4px 0 -6px #c365dd;
-  transform: translateY(-50%) scale(0.95);
-  filter: blur(0.1px);
+[data-theme='dark'] .theme-toggle::before {
+    background: linear-gradient(135deg, #3a3d47 0%, #2d3039 100%);
+    border-color: rgba(255, 255, 255, 0.05);
 }
 
-/* smooth transition helper */
-.theme-transition .theme-toggle,
-.theme-transition .theme-toggle::before,
-.theme-transition .theme-toggle::after {
-  transition-duration: var(--dur);
-  transition-timing-function: cubic-bezier(.2,.9,.3,1);
+/* місяць */
+[data-theme='dark'] .theme-toggle::after {
+    content: '🌙';
+    right: 8px;
+    left: auto;
+    font-size: 14px;
+    opacity: 0.7;
+    filter: grayscale(0.3);
+    text-shadow: 0 0 6px rgba(184, 127, 217, 0.3);
 }
 
-/* active press */
+/* плавні переходи */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* активне натискання */
+.theme-toggle:active {
+    transform: scale(0.98);
+}
+
 .theme-toggle:active::before {
-  transform: translateY(-50%) scale(0.98);
-  transition-duration: 140ms;
+    transform: translateY(-50%) scale(0.95);
+    transition-duration: 100ms;
+}
+
+[data-theme='light'] .theme-toggle:active::before {
+    transform: translate(calc(var(--w) - var(--knob) - var(--gap)), -50%) scale(0.95);
+}
+
+/* додаткові лофт деталі */
+.theme-toggle {
+    font-family: 'Monaco', 'Courier New', monospace;
+}
+
+/* мінімалістичний стиль */
+.theme-toggle {
+    position: relative;
+}
+
+.theme-toggle::before {
+    will-change: transform;
+}
+
+/* адаптація під темний фон */
+@media (prefers-color-scheme: dark) {
+    .theme-toggle {
+        background: var(--bg-dark);
+    }
 }

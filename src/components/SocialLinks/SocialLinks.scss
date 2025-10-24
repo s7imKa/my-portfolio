@@ -32,6 +32,9 @@
         }
 
 
+        .a1 {
+            animation: anim-link1 3.5s ease-in-out infinite alternate;
+        }
         .a2 {
             animation: anim-link2 3.5s ease-in-out infinite alternate;
             [data-theme='light'] & {
@@ -70,27 +73,36 @@
     }
 }
 
-@keyframes anim-link2 {
+@keyframes anim-link1 {
     from {
-        transform: translateX(0.3rem);
+        transform: translateX(0.1rem) rotate(-2deg);
     }
     to {
-        transform: translateX(-0.3rem);
+        transform: translateX(-0.1rem) rotate(2deg);
+    }
+}
+@keyframes anim-link2 {
+    from {
+        transform: translateX(0.3rem) rotate(-4deg);
+    }
+    to {
+        transform: translateX(-0.3rem) rotate(4deg);
     }
 }
 @keyframes anim-link3 {
     from {
-        transform: translateX(0.7rem);
+        transform: translateX(0.7rem) rotate(-8deg);
     }
     to {
-        transform: translateX(-0.7rem);
+        transform: translateX(-0.7rem) rotate(8deg);
     }
 }
 @keyframes anim-link4 {
     from {
-        transform: translateX(1.4rem);
+        transform: translateX(1.4rem) rotate(-12deg);
+
     }
     to {
-        transform: translateX(-1.4rem);
+        transform: translateX(-1.4rem) rotate(12deg);
     }
 }

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { useI18n } from '../../i18n/context'
 
 import SocialLinks from '../../components/SocialLinks/SocialLinks'
@@ -6,14 +7,45 @@ import ThemeToggleBtn from './ThemeToggleBtn/ThemeToggleBtn'
 
 import Logo from '/icons/logo2.svg'
 
-import { useState } from 'react'
 import './Header.scss'
 
 export default function Header() {
     const { t } = useI18n()
     const [openBurger, setBurger] = useState(false)
 
+    const burgerRef = useRef(null)
+    const burgerBtnRef = useRef(null)
+
     const classOpenBurger = openBurger === true ? 'header-burger active-burger' : 'header-burger'
+
+    useEffect(() => {
+        function handleOutside(e) {
+            if (!openBurger) return
+            const target = e.target
+            if (
+                burgerRef.current &&
+                burgerBtnRef.current &&
+                !burgerRef.current.contains(target) &&
+                !burgerBtnRef.current.contains(target)
+            ) {
+                setBurger(false)
+            }
+        }
+
+        function handleKey(e) {
+            if (e.key === 'Escape') setBurger(false)
+        }
+
+        document.addEventListener('mousedown', handleOutside)
+        document.addEventListener('touchstart', handleOutside)
+        document.addEventListener('keydown', handleKey)
+        return () => {
+            document.removeEventListener('mousedown', handleOutside)
+            document.removeEventListener('touchstart', handleOutside)
+            document.removeEventListener('keydown', handleKey)
+        }
+    }, [openBurger])
+
     return (
         <header className='header'>
             <div className='wrapper container'>
@@ -23,11 +55,7 @@ export default function Header() {
                 </div>
 
                 <div className='header-logo'>
-                    <img
-                        className='header-logo__img'
-                        src={Logo}
-                        alt='logo'
-                    />
+                    <img className='header-logo__img' src={Logo} alt='logo' />
                     <p className='header-logo__title'>Maks</p>
                 </div>
 
@@ -67,6 +95,7 @@ export default function Header() {
                 </div>
 
                 <button
+                    ref={burgerBtnRef}
                     className='header__burger-btn'
                     onClick={() => setBurger(prev => !prev)}
                     aria-expanded={openBurger}
@@ -74,8 +103,8 @@ export default function Header() {
                     <span></span>
                     <span></span>
                 </button>
-                <div className={classOpenBurger}>
-                    <nav className='header-content__navigation'>
+                <div ref={burgerRef} className={classOpenBurger}>
+                    <nav className='header-content__navigation' onClick={() => setBurger(false)}>
                         <ul className='header-content__ul'>
                             <li className='header-content__list'>
                                 <a href='#' className='header-content__link'>
