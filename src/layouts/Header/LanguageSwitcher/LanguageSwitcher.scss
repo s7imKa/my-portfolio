@@ -75,11 +75,11 @@
     color: var(--color-text-header);
     font-size: $font-size-bace;
     border: 0.1rem solid transparent;
-    transition: all 0.3s ease;
-
+    transition: all 180ms ease;
     cursor: pointer;
 
     @include hover {
+        color: var(--color-text-header-hover);
         @include anim-hover-btn;
     }
 }

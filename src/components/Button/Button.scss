@@ -1,0 +1,48 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/variables' as *;
+
+.base-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.6rem;
+    cursor: pointer;
+    font-size: $font-size-bace;
+    color: var(--color-text-btn);
+    border: 0.1rem solid $color-primary;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background-color: #c778dd38;
+        border-radius: 45%;
+        transform: translate(-50%, -50%);
+        transition: width 1s ease, height 0.4s ease ;
+        z-index: -1;
+    }
+
+    @include hover {
+        &::before {
+            width: 300%;
+            height: 300%;
+        }
+    }
+}
+
+.border-grey {
+    border: 0.1rem solid var(--color-border-btn);
+    color: var(--color-btn-gray);
+    transition: color 0.3s ease;
+
+    @include hover {
+        color: var(--color-text-btn);
+    }
+}
