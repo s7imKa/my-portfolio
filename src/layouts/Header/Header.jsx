@@ -4,7 +4,7 @@ import SocialLinks from '../../components/SocialLinks/SocialLinks'
 import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher'
 import ThemeToggleBtn from './ThemeToggleBtn/ThemeToggleBtn'
 
-import Logo  from '../../assets/icons/logo2.svg'
+import Logo from '../../../public/icons/logo2.svg'
 
 import { useState } from 'react'
 import './Header.scss'
