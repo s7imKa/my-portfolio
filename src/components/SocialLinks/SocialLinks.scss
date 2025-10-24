@@ -25,17 +25,13 @@
         position: relative;
         width: 3.2rem;
         height: 3.2rem;
-        transition: transform 0.3s ease;
+        transition: transform 0.2s ease;
 
         @include hover {
             @include anim-hover-link;
         }
 
-        @media (max-width: $bp-md) {
-            width: 3.7rem;
-            height: 3.7rem;
-            
-        }
+      
 
         .a2 {
             animation: anim-link2 3.5s ease-in-out infinite alternate;

@@ -7,7 +7,6 @@
 @mixin anim-hover-link {
     transform: rotate(3deg) translateY(-0.1rem);
     filter: drop-shadow(0 0 3px #c365dd);
-    transition: all 0.3s ease-in-out;
 }
 
 @mixin anim-hover-btn {
@@ -17,6 +16,9 @@
 }
 
 @mixin hover {
+    // встановлюємо стандартну тривалість переходу для hover-помічених елементів
+    transition: transform 180ms cubic-bezier(0.2, 0.9, 0.3, 1), color 180ms ease, opacity 180ms ease;
+    transform-origin: center center;
     // для мишки
     @media (hover: hover) and (pointer: fine) {
         &:hover {
@@ -37,6 +39,8 @@
     // для сенсорних пристроїв (натискання пальцем)
     @media (hover: none) and (pointer: coarse) {
         &:active {
+            transform: scale(0.9); /* зменшується */
+            will-change: transform;
             @content;
         }
     }
