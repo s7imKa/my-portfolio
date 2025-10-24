@@ -70,11 +70,14 @@
         z-index: 99;
 
         &__img {
-            width: 1.6rem;
-            height: 1.6rem;
+            width: 2rem;
+            height: 2rem;
         }
         &__title {
             font-size: $font-size-bace;
+            @media (max-width: $bp-md) {
+                font-size: $font-size-mobile;
+            }
         }
     }
 
@@ -120,7 +123,7 @@
             flex-direction: column;
 
             &__link {
-                font-size: 1.8rem;
+                font-size: $font-size-mobile;
             }
             &__ul {
                 flex-direction: column;
