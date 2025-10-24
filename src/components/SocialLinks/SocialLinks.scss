@@ -35,21 +35,21 @@
         .a2 {
             animation: anim-link2 3.5s ease-in-out infinite alternate;
             [data-theme='light'] & {
-                content: url('./public/icons/social-link/light-theme/Telegram2.svg');
+                content: url('/icons/social-link/light-theme/Telegram2.svg');
                 margin: 0 auto;
             }
         }
         .a3 {
             animation: anim-link3 3.5s ease-in-out infinite alternate;
             [data-theme='light'] & {
-                content: url('/public/icons/social-link/light-theme/Email2.svg');
+                content: url('/icons/social-link/light-theme/Email2.svg');
                 margin: 0 auto;
             }
         }
         .a4 {
             animation: anim-link4 3.5s ease-in-out infinite alternate;
             [data-theme='light'] & {
-                content: url('/public/icons/social-link/light-theme/Figma2.svg');
+                content: url('/icons/social-link/light-theme/Figma2.svg');
                 margin: 0 auto;
             }
         }
