@@ -23,24 +23,25 @@
         width: 0;
         height: 0;
         background-color: #c778dd38;
-        border-radius: 45%;
+        border-radius: 100%;
         transform: translate(-50%, -50%);
-        transition: width 1s ease, height 0.4s ease ;
+        transition: width 0.5s ease-in-out, height 0.5s ease-in-out ;
         z-index: -1;
     }
 
     @include hover {
         &::before {
-            width: 300%;
-            height: 300%;
+            width: 150%;
+            height: 400%;
         }
     }
 }
 
 .border-grey {
+    
     border: 0.1rem solid var(--color-border-btn);
     color: var(--color-btn-gray);
-    transition: color 0.3s ease;
+    
 
     @include hover {
         color: var(--color-text-btn);
