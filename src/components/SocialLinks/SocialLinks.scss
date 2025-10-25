@@ -31,7 +31,13 @@
             @include anim-hover-link;
         }
 
-      
+        @media (hover: none) and (pointer: coarse) {
+            &:active {
+                border: .1rem solid $color-primary;
+                border-radius: none;
+                transform: scale(0.95) translateY(3%);
+            }
+        }
 
         .a2 {
             animation: anim-link2 3.5s ease-in-out infinite alternate;

@@ -15,7 +15,7 @@
         max-width: 2rem;
         position: absolute;
         top: -10rem;
-        right: 105%;
+        left: -6%;
 
         @include display-flex;
         flex-direction: column;
@@ -71,8 +71,8 @@
         }
 
         @media (max-width: 1250px) {
-            top: -15rem;
-            right: 5%;
+            top: -23rem;
+            left: 5%;
         }
 
         @media (max-width: $bp-md) {
@@ -114,6 +114,11 @@
             color: var(--color-text-header);
             transition: all 0.2s ease;
             padding: 0.7rem 1rem;
+            border: .1rem solid transparent;
+
+            &.active{
+                border: .1rem solid $color-primary
+            }
 
             @include hover {
                 @include anim-hover-link;

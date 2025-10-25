@@ -4,14 +4,19 @@ export default {
         lang_uk: 'UKR',
         lang_en: 'ENG',
     },
-    home: {
-        title: 'Hi, I am Maksym',
-        intro: 'I am a frontend developer.',
-    },
     header: {
         home: 'home',
         works: 'works',
         about: 'about-me',
         contacts: 'contacts',
-    }
+    },
+    heroSection: {
+        title: 'Maksym is a',
+        description: 'He crafts responsive websites where technologies meet creativity',
+        textBtn: 'Contact me!!',
+        statusBar: {
+            text: 'Currently working on',
+            span: 'Portfolio',
+        },
+    },
 }

@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
-import { useI18n } from '../../i18n/context'
+import { NavLink } from 'react-router'
 
 import SocialLinks from '../../components/SocialLinks/SocialLinks'
 import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher'
 import ThemeToggleBtn from './ThemeToggleBtn/ThemeToggleBtn'
+import { useI18n } from '../../i18n/context'
+
 
 import Logo from '/icons/logo2.svg'
 
@@ -63,28 +65,28 @@ export default function Header() {
                     <nav className='header-content__navigation'>
                         <ul className='header-content__ul'>
                             <li className='header-content__list'>
-                                <a href='#' className='header-content__link'>
+                                <NavLink to='/' className='header-content__link'>
                                     <span>#</span>
                                     {t('header.home')}
-                                </a>
+                                </NavLink>
                             </li>
                             <li className='header-content__list'>
-                                <a href='#' className='header-content__link'>
+                                <NavLink to='works' className='header-content__link'>
                                     <span>#</span>
                                     {t('header.works')}
-                                </a>
+                                </NavLink>
                             </li>
                             <li className='header-content__list'>
-                                <a href='#' className='header-content__link'>
+                                <NavLink to='about-me' className='header-content__link'>
                                     <span>#</span>
                                     {t('header.about')}
-                                </a>
+                                </NavLink>
                             </li>
                             <li className='header-content__list'>
-                                <a href='#' className='header-content__link'>
+                                <NavLink to='contacts' className='header-content__link'>
                                     <span>#</span>
                                     {t('header.contacts')}
-                                </a>
+                                </NavLink>
                             </li>
                         </ul>
                     </nav>
@@ -107,16 +109,16 @@ export default function Header() {
                     <nav className='header-content__navigation' onClick={() => setBurger(false)}>
                         <ul className='header-content__ul'>
                             <li className='header-content__list'>
-                                <a href='#' className='header-content__link'>
+                                <NavLink to='/' className='header-content__link'>
                                     <span>#</span>
                                     {t('header.home')}
-                                </a>
+                                </NavLink>
                             </li>
                             <li className='header-content__list'>
-                                <a href='#' className='header-content__link'>
+                                <NavLink to='works' className='header-content__link'>
                                     <span>#</span>
                                     {t('header.works')}
-                                </a>
+                                </NavLink>
                             </li>
                             <li className='header-content__list'>
                                 <a href='#' className='header-content__link'>

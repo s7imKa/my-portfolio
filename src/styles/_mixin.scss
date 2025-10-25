@@ -11,7 +11,7 @@
 
 @mixin anim-hover-btn {
     background-color: #c778dd38;
-    border: 0.1rem solid #c778dd;
+    border: 0.1rem solid #c365dd;
 }
 
 @mixin hover {
@@ -26,6 +26,9 @@
         }
         // стандартний :active для мишки
         &:active {
+            border: .1rem solid #c365dd;
+            background-color: #c365dd38;
+            border-radius: none;
             transform: scale(0.95) translateY(3%) ;
         }
     }
@@ -38,7 +41,8 @@
     // для сенсорних пристроїв (натискання пальцем)
     @media (hover: none) and (pointer: coarse) {
         &:active {
-            background-color: #c365ddbd;
+            border: .1rem solid #c365dd;
+            background-color: #c365dd38;
             border-radius: none;
             transform: scale(0.95) translateY(3%) ;
         }

@@ -1,3 +1,4 @@
+import socialLinks from '../../data/socialLink'
 import './SocialLinks.scss'
 
 const SocialLinks = ({ column = false }) => {
@@ -5,28 +6,35 @@ const SocialLinks = ({ column = false }) => {
     return (
         <aside className='social-sidebar'>
             <ul className={classSocialIconUl}>
-                <li className='social-sidebar__li'>
-                    <a href='#' className='social-sidebar__a a1'>
-                        <img src='/icons/social-link/github.svg' alt='git hub' />
-                    </a>
-                </li>
-                <li className='social-sidebar__li'>
-                    <a href='#' className='social-sidebar__a a2'>
-                        <img src='/icons/social-link/Telegram.svg' alt='telegram' />
-                    </a>
-                </li>
-                <li className='social-sidebar__li'>
-                    <a href='#' className='social-sidebar__a a3'>
-                        <img src='/icons/social-link/Email.svg' alt='telegram' />
-                    </a>
-                </li>
-                <li className='social-sidebar__li'>
-                    <a href='#' className='social-sidebar__a a4'>
-                        <img src='/icons/social-link/Figma.svg' alt='telegram' />
-                    </a>
-                </li>
+                {socialLinks.map(link => (
+                    <Link
+                        id={link.id}
+                        key={link.id}
+                        name={link.name}
+                        href={link.href}
+                        icon={link.icon}
+                        external={link.external}
+                    />
+                ))}
             </ul>
         </aside>
     )
 }
+
+const Link = ({ id, name, href, icon, external }) => {
+    return (
+        <li className='social-sidebar__li'>
+            <a
+                href={href}
+                className={`social-sidebar__a a${id}`}
+                aria-label={name}
+                title={name}
+                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >
+                <img src={icon} alt={name} loading='lazy' />
+            </a>
+        </li>
+    )
+}
+
 export default SocialLinks

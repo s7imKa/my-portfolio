@@ -3,6 +3,14 @@
 
 .hero-section {
     padding: 5rem 0;
+
+    @media (max-width: $bp-lg) {
+        padding: 8rem 0;
+    }
+    @media (max-width: $bp-md) {
+        padding: 3rem 0;
+    }
+
     .hero-wrap {
         @include display-flex;
         justify-content: space-between;
