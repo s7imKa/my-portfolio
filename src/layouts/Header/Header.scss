@@ -12,17 +12,10 @@
     }
 
     &-social {
+        max-width: 2rem;
         position: absolute;
         top: -10rem;
-        left: -7rem;
-        /* при hover / focus зупиняємо тільки ці три анімації */
-        @include hover {
-            .a2,
-            .a3,
-            .a4 {
-                animation-play-state: paused !important;
-            }
-        }
+        right: 105%;
 
         @include display-flex;
         flex-direction: column;
@@ -32,8 +25,30 @@
         transform-origin: left center;
         animation: social-sway 3.5s ease-in-out infinite alternate;
 
-        @include hover {
-            animation-play-state: paused;
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                animation-play-state: paused;
+                .a2,
+                .a3,
+                .a4 {
+                    animation-play-state: paused !important;
+                }
+            }
+            // стандартний :active для мишки
+            &:active {
+                transform: scale(0.95) translateY(3%);
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            &:active {
+                animation-play-state: paused;
+                .a2,
+                .a3,
+                .a4 {
+                    animation-play-state: paused !important;
+                }
+            }
         }
 
         &__line {
@@ -56,7 +71,8 @@
         }
 
         @media (max-width: 1250px) {
-            left: 1rem;
+            top: -15rem;
+            right: 5%;
         }
 
         @media (max-width: $bp-md) {
