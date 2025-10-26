@@ -27,13 +27,18 @@
         height: 3.2rem;
         transition: transform 0.2s ease;
 
+        @media (max-width: $bp-md) {
+            width: 3.8rem;
+            height: 3.8rem;
+        }
+
         @include hover {
             @include anim-hover-link;
         }
 
         @media (hover: none) and (pointer: coarse) {
             &:active {
-                border: .1rem solid $color-primary;
+                border: 0.1rem solid $color-primary;
                 border-radius: none;
                 transform: scale(0.95) translateY(3%);
             }
@@ -46,15 +51,15 @@
                 margin: 0 auto;
             }
         }
+        // .a3 {
+        //     animation: anim-link3 3.5s ease-in-out infinite alternate;
+        //     [data-theme='light'] & {
+        //         content: url('/icons/social-link/light-theme/Email2.svg');
+        //         margin: 0 auto;
+        //     }
+        // }
         .a3 {
             animation: anim-link3 3.5s ease-in-out infinite alternate;
-            [data-theme='light'] & {
-                content: url('/icons/social-link/light-theme/Email2.svg');
-                margin: 0 auto;
-            }
-        }
-        .a4 {
-            animation: anim-link4 3.5s ease-in-out infinite alternate;
             [data-theme='light'] & {
                 content: url('/icons/social-link/light-theme/Figma2.svg');
                 margin: 0 auto;
