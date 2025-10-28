@@ -1,0 +1,85 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/variables' as *;
+
+.quote {
+    @include display-flex;
+
+    flex-direction: column;
+    justify-content: end;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 5rem 0;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            overflow: hidden;
+        }
+    }
+
+    &-text {
+        position: relative;
+        display: inline-block;
+        border: 0.1rem solid var(--color-gray);
+        transition: padding 200ms ease;
+        padding: 2.5rem;
+
+        &__p {
+            display: inline-block;
+            font-size: 2rem;
+        }
+
+        &__img1 {
+            position: absolute;
+            top: -1.5rem;
+            left: 1rem;
+            transition: all 200ms ease;
+        }
+
+        &__img2 {
+            position: absolute;
+            bottom: -1.5rem;
+            right: 1rem;
+            transition: all 200ms ease;
+        }
+
+        // для мишки
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                padding: 3rem;
+
+                .quote-text__img1 {
+                    top: 0.5rem;
+                    left: 0.5rem;
+                    transform: rotate(-15deg);
+                }
+
+                .quote-text__img2 {
+                    bottom: 0.5rem;
+                    right: 0.5rem;
+                    transform: rotate(-15deg);
+                }
+            }
+        }
+
+        @media (max-width: $bp-sm) {
+            
+
+            
+        }
+    }
+
+    &-avtor {
+        display: inline-block;
+        border: 0.1rem solid var(--color-gray);
+        padding: 1rem;
+        align-self: flex-end;
+        border-top: none;
+        text-align: center;
+
+        &__name {
+            display: inline-block;
+            font-size: 2rem;
+        }
+     
+    }
+}
