@@ -16,7 +16,7 @@
 
         .h2 {
             position: relative;
-            font-size: $font-size-h1;
+            font-size: clamp(25px, 4vw, 30px);
             font-weight: 400;
             white-space: nowrap; 
 

@@ -19,4 +19,12 @@ export default {
             span: 'Portfolio',
         },
     },
+    quote: {
+        text: 'With great power comes great electricity bill',
+        avtor: '- Dr. Who',
+    },
+    title: {
+        text1: 'projects',
+        all: 'View all',
+    },
 }
