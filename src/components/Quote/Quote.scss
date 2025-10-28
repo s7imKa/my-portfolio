@@ -8,7 +8,6 @@
     justify-content: end;
     width: fit-content;
     margin: 0 auto;
-    padding: 5rem 0;
 
     @media (hover: hover) and (pointer: fine) {
         &:hover {
@@ -25,7 +24,8 @@
 
         &__p {
             display: inline-block;
-            font-size: 2rem;
+            font-size: clamp(16px, 2vw, 20px);
+
         }
 
         &__img1 {
@@ -71,14 +71,14 @@
     &-avtor {
         display: inline-block;
         border: 0.1rem solid var(--color-gray);
-        padding: 1rem;
+        padding: 1.3rem;
         align-self: flex-end;
         border-top: none;
         text-align: center;
 
         &__name {
             display: inline-block;
-            font-size: 2rem;
+            font-size: clamp(16px, 2vw, 20px);
         }
      
     }

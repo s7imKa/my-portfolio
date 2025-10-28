@@ -9,7 +9,7 @@ import './Quote.scss'
 const Quote = () => {
     useEffect(() => {
          AOS.init({
-             duration: 1000,
+             duration: 600,
              easing: 'ease-out-cubic',
              once: false,
              mirror: false,
