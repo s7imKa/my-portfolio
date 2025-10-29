@@ -1,25 +1,26 @@
 const projects = [
     {
         id: 1,
-        title: 'Coffee Project',
-        description: 'Проект для кав’ярні з каталогом напоїв та інтерактивними пропозиціями.',
-        image: '../../public/images/projects/coffe-project.png',
+        title: 'Restoran Project',
+        description: 'Сайт ресторану з інтерактивним меню та онлайн-бронюванням.',
+        image: '/images/projects/restoran-project.png',
         techStack: ['HTML', 'CSS', 'JavaScript'],
     },
     {
         id: 2,
-        title: 'Firma Project',
-        description: 'Корпоративний сайт компанії з інформацією про послуги та команду.',
-        image: '/images/projects/firma-prodject.png',
-        techStack: ['React', 'Sass', 'React Router'],
+        title: 'Typing Project',
+        description: 'Тренажер для покращення навичок друку на клавіатурі.',
+        image: '/images/projects/typing-project.png',
+        techStack: ['HTML', 'CSS', 'JavaScript'],
     },
     {
         id: 3,
-        title: 'Food Project',
-        description: 'Сайт для ресторану з меню, онлайн-замовленням та контактами.',
-        image: '/images/projects/food-project.png',
-        techStack: ['React', 'Tailwind CSS', 'Redux'],
+        title: 'Portfolio Project',
+        description: 'Особистий портфоліо сайт для демонстрації проектів та контактної інформації.',
+        image: '/images/projects/portfolio-project.png',
+        techStack: ['React', 'Sass', 'Framer Motion'],
     },
+
     {
         id: 4,
         title: 'Marvel Project',
@@ -30,16 +31,16 @@ const projects = [
     },
     {
         id: 5,
-        title: 'Portfolio Project',
-        description: 'Особистий портфоліо сайт для демонстрації проектів та контактної інформації.',
-        image: '/images/projects/portfolio-project.png',
-        techStack: ['React', 'Sass', 'Framer Motion'],
+        title: 'Food Project',
+        description: 'Сайт для ресторану з меню, онлайн-замовленням та контактами.',
+        image: '/images/projects/food-project.png',
+        techStack: ['React', 'Tailwind CSS', 'Redux'],
     },
     {
         id: 6,
-        title: 'Restoran Project',
-        description: 'Сайт ресторану з інтерактивним меню та онлайн-бронюванням.',
-        image: '/images/projects/restoran-project.png',
+        title: 'Coffee Project',
+        description: 'Проект для кав’ярні з каталогом напоїв та інтерактивними пропозиціями.',
+        image: '../../public/images/projects/coffe-project.png',
         techStack: ['HTML', 'CSS', 'JavaScript'],
     },
     {
@@ -51,10 +52,10 @@ const projects = [
     },
     {
         id: 8,
-        title: 'Typing Project',
-        description: 'Тренажер для покращення навичок друку на клавіатурі.',
-        image: '/images/projects/typing-project.png',
-        techStack: ['HTML', 'CSS', 'JavaScript'],
+        title: 'Firma Project',
+        description: 'Корпоративний сайт компанії з інформацією про послуги та команду.',
+        image: '/images/projects/firma-prodject.png',
+        techStack: ['React', 'Sass', 'React Router'],
     },
 ]
 
