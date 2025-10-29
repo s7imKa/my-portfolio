@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router'
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 import SocialLinks from '../../components/SocialLinks/SocialLinks'
 import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher'
 import ThemeToggleBtn from './ThemeToggleBtn/ThemeToggleBtn'
 import { useI18n } from '../../i18n/context'
-
 
 import Logo from '/icons/logo2.svg'
 
@@ -19,7 +21,15 @@ export default function Header() {
     const burgerBtnRef = useRef(null)
 
     const classOpenBurger = openBurger === true ? 'header-burger active-burger' : 'header-burger'
-
+    useEffect(() => {
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: false,
+        })
+        AOS.refresh()
+    }, [])
     useEffect(() => {
         function handleOutside(e) {
             if (!openBurger) return
@@ -49,10 +59,10 @@ export default function Header() {
     }, [openBurger])
 
     return (
-        <header className='header'>
+        <header className='header' >
             <div className='wrapper container'>
                 <div className='header-social'>
-                    <span className='header-social__line'></span>
+                    <span className='header-social__line' data-aos='fade-up'></span>
                     <SocialLinks column={true} />
                 </div>
 

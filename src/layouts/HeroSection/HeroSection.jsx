@@ -1,3 +1,7 @@
+import { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 import './HeroSection.scss'
 
 import Button from '../../components/Button/Button'
@@ -5,6 +9,16 @@ import { useI18n } from '../../i18n/context'
 
 const HeroSection = () => {
     const { t } = useI18n()
+
+    useEffect(() => {
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: false,
+        })
+        AOS.refresh()
+    }, [])
 
     const tt = text => {
         const res = String(text)
@@ -22,8 +36,16 @@ const HeroSection = () => {
                 </div>
                 <div className='hero-avatar'>
                     <div className='hero-avatar__photo'>
-                        <img src='/icons/site-efect-icon/Dots.svg' alt='dots' />
-                        <img src='/icons/site-efect-icon/Logo.svg' alt='logo' />
+                        <img
+                            src='/icons/site-efect-icon/Dots.svg'
+                            alt='dots'
+                            data-aos='fade-left'
+                        />
+                        <img
+                            src='/icons/site-efect-icon/Logo.svg'
+                            alt='logo'
+                            data-aos='fade-right'
+                        />
                     </div>
                     <div className='hero-avatar__status-bar'>
                         <span className='hero-avatar__status-bar__box'></span>

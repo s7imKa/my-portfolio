@@ -1,4 +1,6 @@
 @use '../../styles/variables' as *;
+@use '../../styles/mixin' as *;
+
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -12,11 +14,24 @@
         flex-direction: column;
         border: 0.1rem solid var(--color-gray);
         justify-content: space-between;
+        transition: border 180ms ease;
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                border: 0.1rem solid #c365dd;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            &:active {
+                border: 0.1rem solid #c365dd;
+            }
+        }
         &__img {
             width: 100%;
             height: auto;
             object-fit: cover;
-            aspect-ratio: 3/2;  
+            aspect-ratio: 3/2;
         }
         &__stack {
             border: 0.1rem solid var(--color-gray);
@@ -45,4 +60,4 @@
             }
         }
     }
-}             
+}

@@ -1,10 +1,23 @@
 import socialLinks from '../../data/socialLink'
+import { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import './SocialLinks.scss'
 
 const SocialLinks = ({ column = false }) => {
     const classSocialIconUl = !column ? 'social-sidebar__ul' : 'social-sidebar__ul--link-column'
+
+    useEffect(() => {
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: false,
+        })
+        AOS.refresh()
+    }, [])
     return (
-        <aside className='social-sidebar'>
+        <aside className='social-sidebar' data-aos='fade-up'>
             <ul className={classSocialIconUl}>
                 {socialLinks.map(link => (
                     <Link
