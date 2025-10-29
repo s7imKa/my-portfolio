@@ -3,12 +3,12 @@
 
 .hero-section {
     padding: 5rem 0;
+    overflow: hidden;
 
     @media (max-width: $bp-lg) {
         padding: 8rem 0;
     }
 
-    
     @media (max-width: $bp-md) {
         padding: 3rem 0;
     }
@@ -55,7 +55,6 @@
         gap: 1rem;
         &__photo {
             position: relative;
-            overflow: hidden;
             width: clamp(20rem, 42vw, 46.9rem);
             aspect-ratio: 457 / 386;
             height: auto;

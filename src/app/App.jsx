@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import { Routes, Route } from 'react-router'
 
+import Loader from '../features/Loader/Loader'
 import Header from '../layouts/Header/Header'
 import './App.scss'
 
@@ -14,7 +15,7 @@ const App = () => {
         <>
             <Header />
             <main>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loader/>}>
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='works' element={<Works />} />

@@ -14,11 +14,22 @@
         flex-direction: column;
         border: 0.1rem solid var(--color-gray);
         justify-content: space-between;
-        transition: border 180ms ease;
+        transition: all 180ms ease;
 
         @media (hover: hover) and (pointer: fine) {
             &:hover {
-                border: 0.1rem solid #c365dd;
+                box-shadow: 0 0 5px rgba(195, 101, 221, 0.123);
+                border-color: #c365dd;
+                animation: pulse 1s infinite alternate;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 5px rgba(195, 101, 221, 0.199);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(195, 101, 221, 0.493);
             }
         }
 

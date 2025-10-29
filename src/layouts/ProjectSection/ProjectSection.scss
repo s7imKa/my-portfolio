@@ -1,3 +1,15 @@
-.project-section{
+.project-section {
+    position: relative;
     overflow: hidden;
 }
+
+.dots {
+    position: absolute;
+    top: 80%;
+    left: -1rem;
+    @media (max-width: 1200px) {
+        display: none;
+        
+    }
+}
+

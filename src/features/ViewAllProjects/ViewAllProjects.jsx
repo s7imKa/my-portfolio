@@ -1,5 +1,6 @@
 import { useI18n } from '../../i18n/context'
 import { useEffect } from 'react'
+import { NavLink } from 'react-router'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import './ViewAllProjects.scss'
@@ -17,9 +18,9 @@ const ViewAllProjects = () => {
         AOS.refresh()
     }, [])
     return (
-        <a href='#' className='link-all-projects' data-aos='fade-left'>
+        <NavLink to='/works' href='#' className='link-all-projects' data-aos='fade-left'>
             {t('title.all')} {'~~>'}
-        </a>
+        </NavLink>
     )
 }
 

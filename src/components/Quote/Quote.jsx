@@ -20,15 +20,16 @@ const Quote = () => {
         AOS.refresh()
     }, [])
     return (
-        <figure className='quote' data-aos='fade-up'>
+        <figure className='quote' data-aos='fade-up' data-aos-offset='50'>
             <blockquote className='quote-text'>
                 <p className='quote-text__p'>{t('quote.text')}</p>
                 <img className='quote-text__img1' src={pows} alt='pows' loading='lazy' />
                 <img className='quote-text__img2' src={pows} alt='pows' loading='lazy' />
             </blockquote>
             <figcaption className='quote-avtor'>
-                <p className='quote-avtor__name'> { t('quote.avtor')}</p>
+                <p className='quote-avtor__name'> {t('quote.avtor')}</p>
             </figcaption>
+
         </figure>
     )
 }

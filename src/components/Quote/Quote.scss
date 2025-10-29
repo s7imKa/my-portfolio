@@ -3,11 +3,13 @@
 
 .quote {
     @include display-flex;
-
     flex-direction: column;
     justify-content: end;
     width: fit-content;
     margin: 0 auto;
+
+
+
 
     &-text {
         position: relative;

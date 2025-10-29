@@ -1,7 +1,11 @@
+// import ProjectList from '../../components/ProjectList/ProjectList'
+
 const Works = () => {
     
     return (
-        <h2>pages works</h2>
+        <div>
+            {/* <ProjectList limit={'all'} /> */}
+        </div>
     )
 }
 

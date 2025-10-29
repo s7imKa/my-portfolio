@@ -1,6 +1,41 @@
+.quote-section {
+    overflow: hidden;
+    position: relative;
+}
+
 .quote-section__container {
     height: 20rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.box {
+    position: absolute;
+    top: 40%;
+    right: -1rem;
+    width: 9.1rem;
+    height: 9.1rem;
+    border: 0.1rem solid var(--color-gray);
+
+    /* анімація обертання */
+    transform-origin: center center;
+    will-change: transform;
+    animation: spin 12s ease infinite;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+
+}
+
+/* ключові кадри обертання */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
