@@ -9,7 +9,7 @@
     padding-bottom: 6rem;
     .card {
         display: flex;
-        align-items: center;
+        align-items: start;
         justify-content: center;
         flex-direction: column;
         border: 0.1rem solid var(--color-gray);
@@ -58,6 +58,7 @@
 
         &__contect {
             padding: 1.5rem;
+            padding-top: .7rem;
 
             &-title {
                 font-size: 2.4rem;
