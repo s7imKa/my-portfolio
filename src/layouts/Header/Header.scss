@@ -25,6 +25,8 @@
         transform-origin: left center;
         animation: social-sway 3.5s ease-in-out infinite alternate;
 
+        z-index: 999;
+
         @media (hover: hover) and (pointer: fine) {
             &:hover {
                 animation-play-state: paused;
@@ -80,22 +82,6 @@
         }
     }
 
-    &-logo {
-        @include display-flex;
-        gap: 0.8rem;
-        z-index: 99;
-
-        &__img {
-            width: 2rem;
-            height: 2rem;
-        }
-        &__title {
-            font-size: $font-size-bace;
-            @media (max-width: $bp-md) {
-                font-size: $font-size-mobile;
-            }
-        }
-    }
 
     &-content {
         @include display-flex;

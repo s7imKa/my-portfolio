@@ -5,11 +5,11 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 import SocialLinks from '../../components/SocialLinks/SocialLinks'
+import { useI18n } from '../../i18n/context'
 import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher'
 import ThemeToggleBtn from './ThemeToggleBtn/ThemeToggleBtn'
-import { useI18n } from '../../i18n/context'
+import Logo from '../../components/Logo/Logo'
 
-import Logo from '/icons/logo2.svg'
 
 import './Header.scss'
 
@@ -59,17 +59,14 @@ export default function Header() {
     }, [openBurger])
 
     return (
-        <header className='header' >
+        <header className='header'>
             <div className='wrapper container'>
                 <div className='header-social'>
                     <span className='header-social__line' data-aos='fade-up'></span>
                     <SocialLinks column={true} />
                 </div>
 
-                <div className='header-logo'>
-                    <img className='header-logo__img' src={Logo} alt='logo' />
-                    <p className='header-logo__title'>Maks</p>
-                </div>
+                <Logo />
 
                 <div className='header-content'>
                     <nav className='header-content__navigation'>

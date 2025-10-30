@@ -1,0 +1,22 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/variables' as *;
+
+
+
+.logo {
+    @include display-flex;
+    justify-content: start;
+    gap: 0.8rem;
+    z-index: 99;
+
+    &__img {
+        width: 2rem;
+        height: 2rem;
+    }
+    &__title {
+        font-size: $font-size-bace;
+        @media (max-width: $bp-md) {
+            font-size: $font-size-mobile;
+        }
+    }
+}

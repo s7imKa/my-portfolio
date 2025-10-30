@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router'
 import Loader from '../features/Loader/Loader'
 import Header from '../layouts/Header/Header'
 import './App.scss'
+import Footer from '../layouts/Footer/Footer'
 
 const Home = React.lazy(() => import('../pages/Home/Home'))
 const Works = React.lazy(() => import('../pages/Works/Works'))
@@ -25,6 +26,8 @@ const App = () => {
                     </Routes>
                 </Suspense>
             </main>
+
+            <Footer/>
         </>
     )
 }

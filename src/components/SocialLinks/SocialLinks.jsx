@@ -1,10 +1,10 @@
-import socialLinks from '../../data/socialLink'
-import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { useEffect } from 'react'
+import socialLinks from '../../data/socialLink'
 import './SocialLinks.scss'
 
-const SocialLinks = ({ column = false }) => {
+const SocialLinks = ({ column = false, anim = true }) => {
     const classSocialIconUl = !column ? 'social-sidebar__ul' : 'social-sidebar__ul--link-column'
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const SocialLinks = ({ column = false }) => {
         AOS.refresh()
     }, [])
     return (
-        <aside className='social-sidebar' data-aos='fade-up'>
+        <aside className='social-sidebar' data-aos={anim ? 'fade-up' : ''}>
             <ul className={classSocialIconUl}>
                 {socialLinks.map(link => (
                     <Link
@@ -27,6 +27,7 @@ const SocialLinks = ({ column = false }) => {
                         href={link.href}
                         icon={link.icon}
                         external={link.external}
+                        anim={anim}
                     />
                 ))}
             </ul>
@@ -34,13 +35,16 @@ const SocialLinks = ({ column = false }) => {
     )
 }
 
-const Link = ({ id, name, href, icon, external }) => {
+const Link = ({ id, name, href, icon, external, anim }) => {
     return (
         <li className='social-sidebar__li'>
             <a
                 href={href}
                 className={`social-sidebar__a a${id}`}
                 aria-label={name}
+                style={{
+                    animation: !anim ? 'none': '',
+                }}
                 title={name}
                 {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             >
