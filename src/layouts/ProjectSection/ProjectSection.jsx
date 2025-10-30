@@ -8,25 +8,23 @@ import 'aos/dist/aos.css'
 import './ProjectSection.scss'
 
 
-const ProjectSection = () => {
-
+const ProjectSection = ({ limitCards, allBtn }) => {
     useEffect(() => {
-            AOS.init({
-                duration: 600,
-                easing: 'ease-out-cubic',
-                once: false,
-                mirror: false,
-            })
-            AOS.refresh()
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: false,
+        })
+        AOS.refresh()
     }, [])
-    
 
     const { t } = useI18n()
     return (
         <section className='project-section'>
             <div className='project-wrap container'>
-                <Title>{t('title.text1')}</Title>
-                <ProjectList limit={3} />
+                <Title allBtn={allBtn}>{t('title.text1')}</Title>
+                <ProjectList limit={limitCards} />
                 <img
                     className='dots'
                     src='/icons/site-efect-icon/Dots.svg'

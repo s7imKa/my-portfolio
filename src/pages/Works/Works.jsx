@@ -1,11 +1,11 @@
-// import ProjectList from '../../components/ProjectList/ProjectList'
+import ProjectSection from '../../layouts/ProjectSection/ProjectSection'
 
 const Works = () => {
     
     return (
-        <div>
-            {/* <ProjectList limit={'all'} /> */}
-        </div>
+        <>
+            <ProjectSection limitCards={'all'}/>
+        </>
     )
 }
 

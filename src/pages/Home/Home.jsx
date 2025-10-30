@@ -8,7 +8,7 @@ const Home = () => {
         <>
             <HeroSection />
             <QuoteSection />
-            <ProjectSection />
+            <ProjectSection limitCards={3} allBtn={true}/>
             <SkillsSection />
         </>
     )

@@ -4,7 +4,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import './Title.scss'
 
-const Title = ({ children }) => {
+const Title = ({ children , allBtn = false}) => {
     useEffect(() => {
         AOS.init({
             duration: 600,
@@ -25,7 +25,7 @@ const Title = ({ children }) => {
                 <span className='liner'></span>
             </div>
 
-            <ViewAllProjects />
+            {allBtn == true && <ViewAllProjects />}
         </div>
     )
 }
