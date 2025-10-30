@@ -66,7 +66,7 @@ const projects = [
     {
         id: 6,
         title: 'Coffee Project',
-        image: '../../public/images/projects/coffe-project.png',
+        image: '/images/projects/coffe-project.png',
         techStack: ['HTML ', 'SCSS ', 'JS'],
         link: 'https://github.com/s7imKa/practice-figma-react-app.git',
     },
