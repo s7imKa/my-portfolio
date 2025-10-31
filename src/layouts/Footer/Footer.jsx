@@ -31,7 +31,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className='footer__media' data-aos='fade-left' data-aos-offset='50'>
+                    <div className='footer__media'>
                         <h4 className='footer__media-title'>Media</h4>
                         <SocialLinks anim={false} />
                     </div>

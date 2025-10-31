@@ -69,6 +69,7 @@
                     position: absolute;
                     top: 60%;
                     right: 0;
+
                 }
                 &:nth-child(2) {
                     position: absolute;
@@ -78,6 +79,9 @@
                     top: 20%;
                     left: 0;
                     z-index: -11;
+                    animation: bounce1 3s ease-in-out infinite;
+
+
                 }
             }
         }
@@ -131,5 +135,14 @@
                 }
             }
         }
+    }
+}
+@keyframes bounce1 {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
     }
 }
