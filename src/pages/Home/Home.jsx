@@ -1,3 +1,4 @@
+import AboutMeSection from '../../layouts/AboutMeSection/AboutMeSection'
 import HeroSection from '../../layouts/HeroSection/HeroSection'
 import ProjectSection from '../../layouts/ProjectSection/ProjectSection'
 import QuoteSection from '../../layouts/QuoteSection/QuoteSection'
@@ -10,6 +11,7 @@ const Home = () => {
             <QuoteSection />
             <ProjectSection limitCards={3} allBtn={true}/>
             <SkillsSection />
+            <AboutMeSection/>
         </>
     )
 }

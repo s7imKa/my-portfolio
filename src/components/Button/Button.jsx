@@ -24,7 +24,7 @@ const Button = ({ children, gray = false, link }) => {
             target='_blank'
             rel='noopener noreferrer'
             data-aos='zoom-in'
-            data-aos-offset='10'
+            data-aos-offset='20'
         >
             {children}
         </a>
