@@ -89,12 +89,12 @@ export default function Header() {
                                     {t('header.about')}
                                 </NavLink>
                             </li>
-                            <li className='header-content__list'>
+                            {/* <li className='header-content__list'>
                                 <NavLink to='contacts' className='header-content__link'>
                                     <span>#</span>
                                     {t('header.contacts')}
                                 </NavLink>
-                            </li>
+                            </li> */}
                         </ul>
                     </nav>
                     <div className='header-content__setup'>

@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 import './BlocksSkills.scss'
 
-const BlocksSkills = () => {
+const BlocksSkills = ({ style }) => {
     useEffect(() => {
         AOS.init({
             duration: 600,
@@ -15,7 +15,7 @@ const BlocksSkills = () => {
         AOS.refresh()
     }, [])
     return (
-        <div className='skills-blocks'>
+        <div className='skills-blocks' style={ style }>
             <div className='block' data-aos='zoom-in-up'>
                 <div className='block__title'>Languages</div>
                 <div className='block__content'>

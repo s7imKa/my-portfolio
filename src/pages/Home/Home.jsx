@@ -11,7 +11,7 @@ const Home = () => {
             <QuoteSection />
             <ProjectSection limitCards={3} allBtn={true}/>
             <SkillsSection />
-            <AboutMeSection/>
+            <AboutMeSection btn={true}/>
         </>
     )
 }
