@@ -1,0 +1,22 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/variables' as *;
+
+.title-work {
+    padding-top: 5rem;
+    &__h3 {
+        font-size: 3.2rem;
+        margin-bottom: 2rem;
+
+        & span {
+            color: $color-primary;
+
+        }
+    }
+
+
+    &__p {
+        font-size: 1.6rem;
+
+        color: var(--color-gray);
+    }
+}

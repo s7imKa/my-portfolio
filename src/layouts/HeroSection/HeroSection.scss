@@ -56,19 +56,34 @@
         &__photo {
             position: relative;
             width: clamp(20rem, 42vw, 46.9rem);
-            aspect-ratio: 1 / 1;
+            // aspect-ratio: 457 / 386;
+            aspect-ratio: 1/1;
             height: auto;
+            // background: url('/images/avatar.png') center / cover no-repeat;
+
             z-index: auto;
             transition: height 180ms ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
 
-            canvas,
-            svg {
-                width: 100% !important;
-                height: 100% !important;
-                display: block;
+            & img {
+                &:nth-child(1) {
+                    height: auto;
+                    position: absolute;
+                    top: 60%;
+                    right: 0;
+
+                }
+                &:nth-child(2) {
+                    position: absolute;
+                    width: 15.5rem;
+                    height: auto;
+
+                    top: 20%;
+                    left: 0;
+                    z-index: -11;
+                    animation: bounce1 3s ease-in-out infinite;
+
+
+                }
             }
         }
 
