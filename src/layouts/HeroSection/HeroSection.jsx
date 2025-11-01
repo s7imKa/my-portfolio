@@ -1,9 +1,8 @@
-import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { useEffect, useState } from 'react'
 
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
-
 
 import './HeroSection.scss'
 
@@ -11,6 +10,7 @@ import Button from '../../components/Button/Button'
 import { useI18n } from '../../i18n/context'
 
 const HeroSection = () => {
+    const [width, setWidth] = useState(window.innerWidth)
     const { t } = useI18n()
 
     useEffect(() => {
@@ -21,6 +21,16 @@ const HeroSection = () => {
             mirror: false,
         })
         AOS.refresh()
+    }, [])
+
+    useEffect(() => {
+        let timeout
+        const handleResize = () => {
+            clearTimeout(timeout)
+            timeout = setTimeout(() => setWidth(window.innerWidth), 200) // 200ms debounce
+        }
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
     }, [])
 
     const tt = text => {
@@ -40,6 +50,7 @@ const HeroSection = () => {
                 <div className='hero-avatar'>
                     <div className='hero-avatar__photo'>
                         <DotLottieReact
+                            key={width} // перерендер лише після debounce
                             src='https://lottie.host/9f929d8c-07c1-4698-8a5a-a90f2af9a137/owNJIbbNQ6.lottie'
                             loop
                             autoplay
