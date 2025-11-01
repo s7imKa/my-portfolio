@@ -2,6 +2,9 @@ import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+
+
 import './HeroSection.scss'
 
 import Button from '../../components/Button/Button'
@@ -36,7 +39,12 @@ const HeroSection = () => {
                 </div>
                 <div className='hero-avatar'>
                     <div className='hero-avatar__photo'>
-                        <img
+                        <DotLottieReact
+                            src='https://lottie.host/9f929d8c-07c1-4698-8a5a-a90f2af9a137/owNJIbbNQ6.lottie'
+                            loop
+                            autoplay
+                        />
+                        {/* <img
                             src='/icons/site-efect-icon/Dots.svg'
                             alt='dots'
                             data-aos='fade-left'
@@ -45,7 +53,7 @@ const HeroSection = () => {
                             src='/icons/site-efect-icon/Logo.svg'
                             alt='logo'
                             data-aos='fade-right'
-                        />
+                        /> */}
                     </div>
                     <div className='hero-avatar__status-bar'>
                         <span className='hero-avatar__status-bar__box'></span>

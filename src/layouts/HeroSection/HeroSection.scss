@@ -58,7 +58,7 @@
             width: clamp(20rem, 42vw, 46.9rem);
             aspect-ratio: 457 / 386;
             height: auto;
-            background: url('/images/avatar.png') center / cover no-repeat;
+            // background: url('/images/avatar.png') center / cover no-repeat;
 
             z-index: auto;
             transition: height 180ms ease;
@@ -122,16 +122,17 @@
         @media (max-width: $bp-sm) {
             width: 100%;
             &__photo {
-                width: clamp(30rem, 60vw, 40rem);
+                // width: 100%;
+                width: clamp(34rem, 60vw, 40rem);
             }
             & img {
                 &:nth-child(1) {
                     height: auto;
-                    width: 5.6rem;
+                    width: 7.6rem;
                 }
                 &:nth-child(2) {
                     height: auto;
-                    width: 10.4rem;
+                    width: 12.4rem;
                 }
             }
         }
